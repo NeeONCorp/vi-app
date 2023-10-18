@@ -25,8 +25,8 @@ jobs:
 
         # Prepare and run Docker containers
         run: git clone https://${{ secrets.USER_NAME }}:${{ secrets.USER_TOKEN }}@github.com/NeeONCorp/vi-env.git
-      - name: Rename the 'workflow' folder
-        run: mv workflow .env
+      - name: Rename the 'vi-env' folder
+        run: mv vi-env .env
       - name: Pull submodules
         run: git -C ./.env submodule update --init --recursive
       - name: Copy laradock config files
