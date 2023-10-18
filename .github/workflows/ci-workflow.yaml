@@ -49,6 +49,8 @@ jobs:
       - name: Composer install (inside Docker repository)
         run: composer install -d ./.env
 
+      - run: curl --GET http://tester
+
       # Comment some configs in the `acceptance.suite.yml` file #######
       - run: sed -i 's/- kill/#- kill/' ./.env/tests/acceptance.suite.yml
       - run: sed -i 's/- chromedriver --whitelisted-ips/#- chromedriver --whitelisted-ips/' ./.env/tests/acceptance.suite.yml
